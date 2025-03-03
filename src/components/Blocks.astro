@@ -1,0 +1,14 @@
+---
+const blocks = Astro.props.blocks;
+import { marked } from "marked";
+---
+
+{
+  blocks?.map((block): any => {
+    if (block.type === "markdown") {
+      const { markdown } = block;
+      const unsafeRawHTML = marked.parse(markdown);
+      return <div class="space-y-2" set:html={unsafeRawHTML} />;
+    }
+  })
+}

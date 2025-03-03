@@ -1,0 +1,15 @@
+---
+import Blocks from "./Blocks.astro";
+const { sections, class: className } = Astro.props;
+---
+
+<section class:list={[className]}>
+  {
+    sections?.map(({ title, blocks }) => (
+      <div>
+        <h2>{title}</h2>
+        <Blocks blocks={blocks} />
+      </div>
+    ))
+  }
+</section>

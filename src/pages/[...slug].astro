@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Markdown from "../components/Markdown.astro";
+
+export async function getStaticPaths() {
+  let pages = await getCollection("pages");
+
+  pages = pages.map((page) => {
+    const { title, slug } = page.data;
+    return {
+      params: { slug: page.id },
+      props: { ...page },
+    };
+  });
+
+  let posts = await getCollection("posts");
+  posts = posts.map((post) => {
+    const { title, slug } = post.data;
+    return {
+      params: { slug: post.id },
+      props: { ...post, slug: post.id },
+    };
+  });
+  return [pages, posts].flat();
+}
+
+const page = Astro.props;
+const { Content } = await render(page);
+const { title } = Astro.props.data;
+---
+
+<Layout>
+  <main class="max-w-screen-sm mx-auto">
+    <h1 class="font-heading text-6xl mb-5">{title}</h1>
+    <Markdown>
+      <Content />
+    </Markdown>
+  </main>
+</Layout>

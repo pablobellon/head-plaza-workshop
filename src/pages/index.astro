@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Markdown from "../components/Markdown.astro";
+import Readme from "../../README.md";
+
+import { getCollection, render } from "astro:content";
+let posts = await getCollection("posts");
+---
+
+<Layout>
+  <main class="max-w-screen-xl mx-auto grid grid-cols-2 gap-8">
+    <Markdown>
+      <Readme />
+    </Markdown>
+    <div class="flex flex-col gap-6">
+      <h2 class="font-heading text-4xl">Posts</h2>
+      {
+        posts &&
+          posts.map(({ id, data }) => {
+            const { title } = data;
+            return (
+              <a href={id}>
+                {title}
+              </a>
+            );
+          })
+      }
+    </div>
+  </main>
+</Layout>

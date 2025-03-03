@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+import settings from "../content/settings.json";
+
+const locale = "en";
+const { seo } = settings;
+
+const {
+  title: defaultTitle,
+  description: defaultDescription,
+  image: defaultImage,
+} = seo;
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  image = defaultImage,
+} = Astro.props;
+const SITE = import.meta.env.SITE;
+const currentUrl = new URL(Astro.url.pathname, SITE).toString();
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <meta property="og:locale" content={locale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body class="mx-auto mt-8 pb-16">
+    <slot />
+  </body>
+</html>
