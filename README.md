@@ -1,5 +1,7 @@
 # HEAD Media Design Plaza Workshop
 
+test test
+
 ## Schedule
 
 |Week 1 | Testing and refinement |   
