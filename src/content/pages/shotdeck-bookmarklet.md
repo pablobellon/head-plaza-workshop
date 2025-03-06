@@ -3,6 +3,8 @@ title: "Shotdeck bookmarklet"
 description: ""
 ---
 
+[Bookmarklet Maker](https://caiorss.github.io/bookmarklet-maker/)
+
 ```js
 javascript:(function(){
     const slugify = (str) => {
