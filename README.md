@@ -20,6 +20,7 @@
 
 
 ## Links
+* [Delivrables](/delivrables)
 * [Resources](/resources)
 * [Snippets](/snippets)
 * [Shotdeck Bookmarklet](/shotdeck-bookmarklet)
