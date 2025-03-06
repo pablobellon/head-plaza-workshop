@@ -8,7 +8,7 @@
 |Tuesday|Test Day|   
 |Wednesday|Test Day, check in with Alexia|   
 |Thursday|Production & Deliverables Update|   
-|Friday|Production & Final Project Plan Presentation|   
+|Friday|Production & Retroplanning|   
 
 |Week 2 | Production Week |   
 |-------|----------------|
@@ -21,6 +21,7 @@
 
 ## Links
 * [Resources](/resources)
+* [Shotdeck Bookmarklet](/shotdeck-bookmarklet)
 * [Github Repository](https://github.com/TiborUdvari/head-plaza-workshop)
 * [Brief](https://docs.google.com/document/d/1WMNccdsMVdInnBK9PDlJfiOdWVH6o0DUxply-n0Y6bc/edit?tab=t.0#heading=h.t2ep4cz0i3t6)
 
